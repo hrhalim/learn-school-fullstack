@@ -1,18 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2'
+import "./Login.css"
+import { FaEye, FaEyeSlash} from 'react-icons/fa';
 
 const Login = () => {
-    
-    const [disabled, setdisabled] = useState(true)
-
-    //loadCaptcha
-    useEffect(() =>{
-        loadCaptchaEnginge(6);  
-    }, [] )
+    const [show, setShow] = useState(false); 
 
     const {signIn} = useContext(AuthContext)
     const navigate = useNavigate();
@@ -31,7 +26,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             Swal.fire({
-                position: 'top-end',
+                position: 'top center',
                 icon: 'success',
                 title: 'User Login Successfully',
                 showConfirmButton: false,
@@ -40,18 +35,11 @@ const Login = () => {
               navigate(from, {replace: true});
         })
    }
-   const handleValidateCaptcha = (e) => {
-         const user_captcha_value = e.target.value;
-         if(validateCaptcha(user_captcha_value)) {
-            setdisabled(false)
-         }  
-    }
-
-
+ 
     return (
         <>
             <Helmet>
-                <title>FoodJon | Login</title>
+                <title>MusicLab | Login</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content md:flex">
@@ -71,20 +59,24 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" /> 
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                <LoadCanvasTemplate />
-                                </label>
-                                <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="type the captcha above" className="input input-bordered" /> 
-                                
-                            </div>
+                                <div className="relative">
+                                <input type={show? "text" : "password"} name="password" placeholder="password" className="w-full input input-bordered" /> 
+                                <span className="hide-icon" onClick={() => setShow(!show)}>
+                                    {
+                                        show? <>
+                                        <FaEyeSlash></FaEyeSlash>
+                                        </> : <>
+                                        <FaEye></FaEye>
+                                        </>
+                                    }
+                                </span>
+                                </div>
+                            </div> 
                             <div className="form-control mt-6">
-                                <input  disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn btn-success" type="submit" value="Login" /> 
                             </div>
                         </form>
-                        <p className="p-3"><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+                        <p className="p-4"><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
                        
                     </div>
                 </div>

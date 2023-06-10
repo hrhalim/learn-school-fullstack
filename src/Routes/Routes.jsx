@@ -9,6 +9,9 @@ import Login from "../Pages/Login/Login";
 import Home from "../Pages/Home/Home/Home";
 import SignUp from "../Pages/SignUp/SignUp";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Dashboard from "../Layout/Dashboard";
+// import Instructor from "../Pages/Dashboard/Instructor/Instructor";
+import AddClass from "../Pages/Dashboard/InstructorDashboard/AddClass";
  
   
  export const router = createBrowserRouter([
@@ -30,18 +33,17 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
           element: <SignUp></SignUp>
         }
       ]
+    }, 
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'addclass',
+          element: <AddClass></AddClass>
+        }
+      ]
     }
-
-    // {
-    //   path: 'dashboard',
-    //   element: <Dashboard></Dashboard>,
-    //   children: [
-    //     {
-    //       path: 'mycart',
-    //       element: <MyCart></MyCart>
-    //     }
-    //   ]
-    // }
 
   ]);
   

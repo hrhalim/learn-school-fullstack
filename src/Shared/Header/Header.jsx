@@ -9,13 +9,13 @@ const Header = () => {
   const {user, logOut} = useContext(AuthContext)
   const [cart] = useCart()
 
-    const handleSignOut = () =>{
-      logOut()
-      .then(() => {})
-      .catch(error =>{
-        console.log(error);
-      })
-    }
+  const handleSignOut = () =>{
+    logOut()
+    .then(() => {})
+    .catch(error =>{
+      console.log(error);
+    })
+  }
 
     const navOptions =  <> 
         <li><Link to='/'>Home</Link></li>
@@ -60,7 +60,7 @@ const Header = () => {
                  </div>:
                  
                     <Link to="/login"><button className="btn btn-active btn-accent text-white px-6">Login</button></Link>
-                     }
+              }
             </div>
         </div>
         </>

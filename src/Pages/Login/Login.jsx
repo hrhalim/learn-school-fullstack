@@ -5,28 +5,24 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2'
 import "./Login.css"
 import { FaEye, FaEyeSlash} from 'react-icons/fa';
+import { useForm } from "react-hook-form";
 
 const Login = () => {
     const [show, setShow] = useState(false); 
-
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const {signIn} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation()
 
     const from = location.state?.from?.pathname || '/';
 
-   const handleLogin = event => {
-         event.preventDefault();
-        const form = event.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        console.log(email, password)
-        signIn(email, password)
+    const onSubmit = data => {
+        signIn(data.email, data.password)
         .then(result => {
             const user = result.user;
             console.log(user);
             Swal.fire({
-                position: 'top center',
+                position: 'top-end',
                 icon: 'success',
                 title: 'User Login Successfully',
                 showConfirmButton: false,
@@ -34,8 +30,9 @@ const Login = () => {
               })
               navigate(from, {replace: true});
         })
-   }
- 
+         
+     }
+
     return (
         <>
             <Helmet>
@@ -48,19 +45,20 @@ const Login = () => {
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     </div>
                     <div className="card md:w-1/2 max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleLogin} className="card-body">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                                <input {...register("email" )} type="email" name="email" placeholder="email" className="input input-bordered" />
+                                {errors.email &&  <span className="text-red-600">Email is required</span>}
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <div className="relative">
-                                <input type={show? "text" : "password"} name="password" placeholder="password" className="w-full input input-bordered" /> 
+                                <input {...register("password" )} type={show? "text" : "password"} name="password" placeholder="password" className="w-full input input-bordered" /> 
                                 <span className="hide-icon" onClick={() => setShow(!show)}>
                                     {
                                         show? <>

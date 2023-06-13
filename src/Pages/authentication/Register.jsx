@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const Register = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const { googleLogIn, createUser, updateUserProfile } = useContext(AuthContext);
     const navigete = useNavigate();
     const onSubmit = data => {
@@ -92,10 +92,10 @@ const Register = () => {
     }
 
     return (
-        <section className="min-h-screen py-20">
-            <div className="hero min-h-screen bg-base-200 items-center">
-                <div className="hero-content"> 
-                    <form className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100" onSubmit={handleSubmit(onSubmit)}>
+        <section className="min-h-screen py-10">
+            <div className="min-h-screen items-center">
+                <div className="hero-content w-full"> 
+                    <form className="card flex-shrink-0 shadow-2xl bg-base-100 md:w-2/4" onSubmit={handleSubmit(onSubmit)}>
                         <div className="card-body" >
                             <div className="form-control">
                                 <label className="label">
@@ -156,14 +156,14 @@ const Register = () => {
                                         }
                                     })} />
                                 {errors.matchPass && <p className="text-red-500">{errors.matchPass.message}</p>}
-                            </div>
-                            <p>Already User ? <Link to='/login' className="underline text-info">Login Now</Link></p>
+                            </div> 
                             <div className="form-control mt-6">
-                                <input className="btn btn-info" value='Register' type="submit" />
+                                <input className="btn btn-success" value='Register' type="submit" />
                             </div>
                         </div>
-                        <div className="divider"></div>
-                        <button type="button" onClick={handleGoogleLogin} className="btn btn-circle btn-error mx-auto mb-5"><FaGoogle /></button>
+                        <p className="pl-7">Already User ? <Link to='/login' className="underline text-success">Login Now</Link></p>
+                        <div className="divider"></div> 
+                        <button type="button" onClick={handleGoogleLogin} className="btn btn-success mx-auto mb-5"><FaGoogle /></button>
                     </form>
                 </div>
             </div>

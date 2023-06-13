@@ -65,9 +65,9 @@ const Login = () => {
 
 
     return (
-        <section className="min-h-screen">
-            <div className="hero min-h-screen items-center">
-                <div className="hero-content">
+        <section className="min-h-screen py-10">
+            <div className="min-h-screen items-center">
+                <div className="hero-content w-full">
                     <form className="card flex-shrink-0 shadow-2xl bg-base-100 md:w-2/4" onSubmit={handleSubmit(onSubmit)}>
                         <div className="card-body" >
                             <div className="form-control">
@@ -100,12 +100,12 @@ const Login = () => {
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
-                            </div>
-                            <p>New Here ? <Link to='/register' className="underline text-info">Register Now</Link></p>
+                            </div> 
                             <div className="form-control mt-6">
                                 <input className="btn btn-success" value='Login' type="submit" />
                             </div>
                         </div>
+                        <p className="pl-7">New Here ? <Link to='/register' className="underline text-success">Register Now</Link></p>
                         <div className="divider"></div>
                         <button type="button" onClick={handleGoogleLogin} className="btn btn-success btn-circle mx-auto mb-5"><FaGoogle /></button>
                     </form>

@@ -1,6 +1,6 @@
-<h3>LearnGO</h3>
+<h3>LearnSchool</h3>
 <ul>
-    <li>LearnGO is the platform for all of your need's for academic lif </li>
+    <li>LearnSchool is the platform for all of your need's for academic lif </li>
     <li>here student can purchase their favourite teacher's courses </li>
     <li>it is also very user friendly for intructor's </li>
     <li>intructor's can upload all of their lectures and courses</li>
@@ -29,4 +29,4 @@
     <li>sweetalert2</li>
     <li>swiper</li>
 </ul>
-<p>live site link: https://summer-camp-client-ef842.web.app/ </p>
+<p>live site link:  </p>

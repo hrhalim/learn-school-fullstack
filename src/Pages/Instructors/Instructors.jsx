@@ -1,17 +1,31 @@
+import { useEffect, useState } from "react";
 
 const Instructors = () => {
+    const [teachers, setTeachers] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/teachers')
+            .then(res => res.json())
+            .then(data => setTeachers(data))
+    }, [])
+    // console.log(teachers);
+
     return (
-        <>
-            <section className="py-10 md:py-24 bg-slate-100"> 
-                <div className="container">
-                    <div className="text-center pb-10">
-                        <h2 className="text-black font-bold text-3xl pb-4">Instructors</h2>
-                        <p className="text-black md:w-2/3 m-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fugit assumenda unde. Saepe mollitia omnis, dolorem quas accusamus fugiat! Officiis, distinctio, sint dicta sequi, laborum voluptas omnis non nam qui natus veniam. Adipisci praesentium vero est possimus reiciendis cum minus!
-                        </p>
-                    </div> 
-                </div>
-            </section>
-        </>
+        <section className="min-h-screen py-40">
+            <article className="grid md:grid-cols-3 gap-20 mx-40">
+                {
+                    teachers?.map(teacher =>
+                        <div 
+                        
+                        key={teacher.email}>
+                            <img src={teacher.image} alt="teacher image" 
+                            className="rounded-t-xl h-[300px] w-[300px] object-cover"/>
+                            <h2 className="text-3xl font-bold">{teacher.name}</h2>
+                            <p>email: {teacher.email}</p>
+                        </div>
+                    )
+                }
+            </article>
+        </section>
     );
 };
 

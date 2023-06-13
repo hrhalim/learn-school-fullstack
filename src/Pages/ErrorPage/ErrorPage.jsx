@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {
+    const navigate = useNavigate();
+    const imgURL = 'https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/404-error.svg';
     return (
-        <>
-         <section className="py-10 md:py-20">  
-             <img className="w-4/5 m-auto" src="https://res.cloudinary.com/practicaldev/image/fetch/s--_GqDpWw0--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/7aqcppklh6bexoa70320.jpg" alt="" />
-             <div className="text-center">
-                <p className="text-black font-semibold pb-4 text-2xl">Sorry Could not fond</p>
-                <Link to="/">
-                <button className="btn btn-success">Back to Home</button>
-                </Link>
-             </div> 
-         </section> 
-        </>
+        <div className="hero min-h-screen"  style={{ backgroundImage: `url(${imgURL})` }}>
+            <div className="hero-overlay bg-opacity-60"></div>
+            <div className="hero-content text-center text-neutral-content">
+                <div className="max-w-md">
+                    <button onClick={() => navigate('/')} className="btn btn-primary">Home</button>
+                </div>
+            </div>
+        </div>
     );
 };
 

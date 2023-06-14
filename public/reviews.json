@@ -1,28 +1,32 @@
 [
     {
       "id": 1,
-      "subject": "Physics",
+      "picture":"https://images.pexels.com/users/avatars/282812/gokul-k-s-535.jpeg?auto=compress&fit=crop&h=130&w=130&dpr=1",
+      "subject": "Piano",
       "author": "Jon Bokken",
       "content": "The interactive experiments made learning  and the examples helped me understand complex concepts easily Great course! The explanations were clear, The interactive experiments made learning  and the examples helped me understand complex concepts easily.",
       "rating": 4.5
     },
     {
       "id": 2,
-      "subject": "Chemistry",
+      "picture":"https://images.pexels.com/photos/3785094/pexels-photo-3785094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "subject": "Guitar",
       "author": "Sumon Hossen",
       "content": "I loved the chemistry lessons!  and the examples helped me understand complex concepts easily The interactive experiments made learning so much fun. The interactive experiments made learning  Highly recommended!",
       "rating": 4.8
     },
     {
       "id": 3,
-      "subject": "Math",
+      "picture":"https://images.pexels.com/users/avatars/30353109/shvets-production-893.jpeg?auto=compress&fit=crop&h=130&w=130&dpr=1",
+      "subject": "Violin",
       "author": "Sagor Jahan",
       "content": "The math course was  and the examples helped me understand complex concepts easily  The interactive experiments made learning outstanding. The instructor's approach simplified difficult topics and improved my problem-solving skills.",
       "rating": 4.2
     },
     {
       "id": 4,
-      "subject": "Biology",
+      "picture":"https://images.pexels.com/photos/3785094/pexels-photo-3785094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "subject": "Singing",
       "author": "Jahid Hassan",
       "content": "The biology The  and the examples helped me understand complex concepts easily interactive experiments made learning  lessons were comprehensive and well-structured. I enjoyed the practical exercises and gained a deeper understanding of the subject.",
       "rating": 4.6

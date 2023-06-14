@@ -17,7 +17,7 @@ import { SunnyMorning } from 'moving-letters'
 const Banner4 = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('./reviews.json')
+        fetch('reviews.json')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
@@ -25,7 +25,7 @@ const Banner4 = () => {
 
 
     return (
-        <section className="py-20 md:mx-40 mx-10 ">
+        <section className="py-7 md:py-20 border border-t-2">
             <span className="font-bold mb-20 text-center
             ">
                 <SunnyMorning text="Our Student's Review" />
@@ -41,19 +41,19 @@ const Banner4 = () => {
                     reviews?.map(review =>
                         <SwiperSlide
                             className="space-y-10 py-5"
-                            key={review.author}>
-                            <h3 className="text-3xl font-semibold ">
-                                {review.author}
-                            </h3>
+                            key={review.author}> 
                             <Rating
                                 className="mx-auto"
                                 style={{ maxWidth: 180, }}
                                 value={review.rating}
                                 readOnly
                             />
-                            <p className="font-semibold text-xl">
+                            <p className="font-semibold text-xl md:w-2/3 m-auto">
                                 {review.content}
                             </p>
+                            <h3 className="text-3xl font-semibold pb-5">
+                                {review.author}
+                            </h3>
                         </SwiperSlide>
                     )
                 }

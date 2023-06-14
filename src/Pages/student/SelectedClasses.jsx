@@ -34,14 +34,14 @@ const SelectedClasses = () => {
         })
     }
     return (
-        <section>
+        <section className='py-10 md:py-24'>
             <div className="overflow-x-auto mx-40 min-h-screen">
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Lecture Name</th>
-                            <th>Instructor</th>
+                            <th className='text-3xl font-bold text-black'>#</th>
+                            <th className='text-3xl font-bold text-black'>Lecture Name</th>
+                            <th className='text-3xl font-bold text-black'>Instructor</th>
                             <th></th>
                             <th></th>
                         </tr>

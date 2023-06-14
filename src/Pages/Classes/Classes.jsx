@@ -47,11 +47,11 @@ const Classes = () => {
     }
 
     return (
-        <section className="grid grid-cols-3 mx-40 gap-20 py-7 md:py-20">
+        <section className="grid lg:grid-cols-3 mx-40 gap-10 py-7 md:py-20">
             {
                 data?.map(lecture =>
                     <div key={lecture._id} className={`${lecture.availableSeats == 0 ? 'bg-red-600' : ''} border rounded-xl border-slate-300 w-[300px] p-4`}>
-                        <img src={lecture.image} className="rounded-t-xl w-auto mb-4" />
+                        <img src={lecture.image} className="rounded-t-xl w-auto mb-4 h-52" />
                         <div className={`space-y-2`}>
                             <h3 className="text-2xl font-bold">{lecture.name}</h3>
                             <p>Instructor: {lecture.instructor}</p>

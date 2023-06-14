@@ -39,10 +39,10 @@ const ManageClasses = () => {
 
     return (
         <section>
-            <h3 className="text-2xl font-bold mb-5 text-center">All Classes</h3>
+            <h3 className="text-3xl font-bold mb-5 text-center pt-6">All Classes</h3>
             <div className='min-h-screen flex flex-wrap gap-10 mx-40 my-20'>
                 {
-                    allLectures?.map(item => <div key={item._id} className="flex bg-base-100 shadow-2xl w-full rounded-lg">
+                    allLectures?.map(item => <div key={item._id} className="flex bg-base-100 border w-full rounded-lg">
                         <figure><img src={item.image} className="w-64 rounded-s-lg h-full object-fill" /></figure>
                         <div className="ms-10 flex-grow my-auto p-y-2">
                             <h2 className="text-2xl font-bold">{item.name}</h2>

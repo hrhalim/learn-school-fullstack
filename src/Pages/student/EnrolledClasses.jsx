@@ -14,8 +14,8 @@ const EnrolledClasses = () => {
         <section className='min-h-screen flex flex-wrap gap-10 mx-40 my-20'>
             {
                 data?.map(item =>
-                    <div key={item._id} className="flex bg-base-100 shadow-2xl w-full h-[200px] rounded-lg">
-                        <figure><img src={item?.lecture?.image} className="w-64 h-full rounded-s-lg" /></figure>
+                    <div key={item._id} className="flex bg-base-100 border w-full rounded-lg">
+                        <figure><img src={item?.lecture?.image} className="w-80 h-full rounded-s-lg" /></figure>
                         <div className="ms-10 flex-grow my-auto">
                             <h2 className="text-2xl font-bold">{item?.lecture?.name}</h2>
                             <p>Instructor: {item?.lecture?.instructor}</p>

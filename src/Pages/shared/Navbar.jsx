@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
-import Swal from 'sweetalert2';
-
+import Swal from 'sweetalert2'; 
 const Navbar = ({ toggle, setToggle }) => {
     const { logOut, user } = useContext(AuthContext);
     // console.log(user);
@@ -45,13 +44,13 @@ const Navbar = ({ toggle, setToggle }) => {
                 </li>
             </>
         }
-        <li ><select onChange={handleToggleChange} className="select w-5 max-w-xs hidden md:block">
+        <li ><select onChange={handleToggleChange} className="select w-5 max-w-xs hidden md:block bg-success">
             <option value={false} defaultValue>Light</option>
             <option value={true}>Dark</option>
         </select></li>
     </>
     return (
-        <nav className={`navbar  items-center ${toggle ? 'bg-black opacity-90 text-white' : 'bg-slate-500 text-white'}`}>
+        <nav className={`navbar  items-center ${toggle ? 'bg-black opacity-90 text-white' : 'bg-black text-white'}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

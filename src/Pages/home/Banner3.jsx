@@ -14,7 +14,7 @@ const Banner3 = () => {
             <div className='mb-11'>
                 <h3 className='text-3xl md:text-5xl font-bold text-center'>Popular Instructors</h3>
             </div>
-            <div className='grid md:grid-cols-3 gap-7 md:mx-40'>
+            <div className='grid md:grid-cols-3 gap-7 md:mx-40 px-4'>
                 {
                     data?.map(teacher =>
                         <div key={teacher._id} className="card shadow-2xl"> 

@@ -14,7 +14,7 @@ const Banner2 = () => {
             <div className='mb-10 text-center'>
             <span className='font-bold text-3xl md:text-5xl'>Popular Classes</span>
             </div> 
-             <div className='grid md:grid-cols-3 gap-7 md:mx-40'>
+             <div className='grid md:grid-cols-3 gap-7 md:mx-40 px-4'>
                 { 
                     data?.map(item =>
                         <div key={item._id} className="card border">

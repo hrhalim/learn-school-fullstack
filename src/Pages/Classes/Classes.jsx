@@ -47,7 +47,8 @@ const Classes = () => {
     }
 
     return (
-        <section className="grid lg:grid-cols-3 mx-40 gap-10 py-7 md:py-20">
+       <section className="py-7 md:py-20">
+        <div className="grid lg:grid-cols-3 md:mx-40 gap-5 m-auto">
             {
                 data?.map(lecture =>
                     <div key={lecture._id} className={`${lecture.availableSeats == 0 ? 'bg-red-600' : ''} border rounded-xl border-slate-300 w-[300px] p-4`}>
@@ -63,7 +64,8 @@ const Classes = () => {
                     </div>)
             }
 
-        </section>
+        </div>
+       </section>
     );
 };
 

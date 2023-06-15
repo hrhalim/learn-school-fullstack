@@ -6,8 +6,7 @@ const Instructors = () => {
         fetch('http://localhost:5000/teachers')
             .then(res => res.json())
             .then(data => setTeachers(data))
-    }, [])
-    // console.log(teachers);
+    }, []) 
 
     return (
         <section className="min-h-screen py-40">

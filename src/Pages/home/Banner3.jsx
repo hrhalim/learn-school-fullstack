@@ -10,25 +10,25 @@ const Banner3 = () => {
     }, [])
     // console.log(data);
     return (
-        <article className='my-10'>
-            <h3 className='text-5xl font-bold text-center mt-40 text-primaryClr'>Popular Instructors</h3>
-            <section className='grid grid-cols-1 md:grid-cols-2 gap-20 gap-y-40 md:mx-40 mx-5 mt-40'>
+        <section className='py-7 md:py-20 bg-slate-50'>
+            <div className='mb-11'>
+                <h3 className='text-5xl font-bold text-center'>Popular Instructors</h3>
+            </div>
+            <div className='grid md:grid-cols-3 gap-7 md:mx-40'>
                 {
                     data?.map(teacher =>
-                        <div key={teacher._id} className="card relative bg-slate-200 shadow-2xl">
-                            <div className="avatar absolute -top-1/3 left-10 bg-slate-200 rounded shadow-neutral-500 shadow-inner p-3">
-                                <div className="w-24 rounded">
-                                    <img src={teacher.image} />
-                                </div>
-                            </div>
-                            <div className="card-body mt-14">
-                                <h2 className="card-title">{teacher.name}</h2>
+                        <div key={teacher._id} className="card shadow-2xl"> 
+                                <div className="h-96">
+                                    <img className='w-full h-full' src={teacher.image ? teacher.image : "Not Found" } />
+                                </div> 
+                            <div className="card-body">
+                                <h2 className="font-bold text-3xl">{teacher.name ? teacher.name: "Not Found"}</h2>
                             </div>
                         </div>
                     )
                 }
-            </section>
-        </article>
+            </div>
+        </section>
     );
 };
 

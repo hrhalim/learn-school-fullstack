@@ -9,7 +9,7 @@ const HomeLayout = () => {
     return (
         <main>
             <Navbar toggle={toggle} setToggle={setToggle} />
-            <section className={`${toggle ? 'bg-transparent' : 'bg-slate-400'}`}>
+            <section className={`${toggle ? 'bg-transparent' : 'bg-black'}`}>
             <Outlet />
             </section>
             <Footer toggle={toggle} />

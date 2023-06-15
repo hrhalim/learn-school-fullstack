@@ -5,28 +5,35 @@ import { useEffect, useState } from 'react';
 
 
 const Banner2 = () => {
-    const [data, setData] = useState([]);
-    const links = [
-        "https://i.postimg.cc/HscpBgCX/medical.jpg",
-        "https://i.postimg.cc/fL8wgWLj/foundation.jpg",
-        "https://i.postimg.cc/3RxhpMBy/varisty.jpg",
-        "https://i.postimg.cc/xT0vz6rw/chem.jpg"
-    ]
+    const [data, setData] = useState([]); 
     useEffect(() => {
         axios.get('http://localhost:5000/classes/banner2')
-        .then(res => setData(res.data))
+        .then(res => setData(res.data)) 
     }, [])
     return (
-        <article className=' my-10'>
-            
-            <span className='font-bold text-center mb-10 '><SunnyMorning  text={`Popular Classes`}/></span>
-            <figure className='grid grid-cols-1 md:grid-cols-2 gap-10 md:mx-40 mx-5'>
-                {
-                    data?.map((item, index) =>
-                        <img key={index} className='shadow-neutral-400 shadow-2xl w-[400px] h-[250px] object-cover ' src={item.image} />)
-                }
-            </figure>
-        </article>
+        <section className='py-5 md:py-20 border border-t-2'> 
+            <div className='mb-10'>
+            <span className='font-bold text-center'><SunnyMorning  text={`Popular Classes`}/></span>
+            </div> 
+             <div className='grid md:grid-cols-3 gap-7 md:mx-40'>
+                { 
+                    data?.map(item =>
+                        <div key={item._id} className="card border">
+                            <div className="p-3">
+                                <div className="h-60 rounded">
+                                    <img className='w-full h-full' src={item.image} />
+                                </div>
+                            </div>
+                            <div className="card-body">
+                                <h2 className="font-bold text-3xl">{item.name}</h2>
+                                <h3 className="font-semibold text-2xl">Available Seats: {item.availableSeats}</h3>
+                                <h4 className="font-semibold text-2xl">Price: {item.price}</h4>
+                            </div>
+                        </div>
+                    ) 
+                } 
+             </div>
+        </section>
     );
 };
 

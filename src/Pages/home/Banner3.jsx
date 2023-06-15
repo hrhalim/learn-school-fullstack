@@ -6,6 +6,7 @@ const Banner3 = () => {
     useEffect(() => {
         axios('http://localhost:5000/teachers/banner3')
             .then(res => setData(res.data))
+            console.log(data);
     }, [])
     // console.log(data);
     return (

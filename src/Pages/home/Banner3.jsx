@@ -12,7 +12,7 @@ const Banner3 = () => {
     return (
         <section className='py-7 md:py-20 bg-slate-50'>
             <div className='mb-11'>
-                <h3 className='text-5xl font-bold text-center'>Popular Instructors</h3>
+                <h3 className='text-3xl md:text-5xl font-bold text-center'>Popular Instructors</h3>
             </div>
             <div className='grid md:grid-cols-3 gap-7 md:mx-40'>
                 {

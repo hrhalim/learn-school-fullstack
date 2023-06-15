@@ -59,8 +59,7 @@ const CheckoutForm = ({ price, lectureId, lecture }) => {
             )
         }
         else {
-            setCardError('');
-            // console.log('payment method', paymentMethod)
+            setCardError(''); 
         }
 
         setProcessing(true)
@@ -85,8 +84,7 @@ const CheckoutForm = ({ price, lectureId, lecture }) => {
         console.log('payment intent', paymentIntent)
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
-            setTransactionId(paymentIntent.id);
-            // save payment information to the server
+            setTransactionId(paymentIntent.id); 
             const payment = {
                 _id: lectureId,
                 lecture,

@@ -51,8 +51,7 @@ const DashboardNavbar = () => {
                     </ul>
                 </div>
                 <a className=" normal-case text-xl">
-                    <img src="https://i.ibb.co/SrW2q87/logo-1.png"
-                        className="w-32 inline" />
+                <span className='font-bold text-3xl md:text-5xl text-white'>LearnSchool</span>
                 </a>
             </div>
             <div className="navbar-end hidden lg:flex items-center">

@@ -25,7 +25,7 @@ const Banner4 = () => {
         <section className="py-7 md:py-20 border border-t-2">
             <span className="font-bold mb-20 text-center
             ">
-                <SunnyMorning text='Student Feedback'/> 
+                <SunnyMorning text='Feedback'/> 
                 </span>
             <Swiper
                 pagination={{

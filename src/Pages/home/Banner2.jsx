@@ -1,5 +1,4 @@
-import axios from 'axios';
-import { SunnyMorning } from 'moving-letters'
+import axios from 'axios'; 
 import { useEffect, useState } from 'react';
 
 
@@ -12,8 +11,8 @@ const Banner2 = () => {
     }, [])
     return (
         <section className='py-5 md:py-20 border border-t-2'> 
-            <div className='mb-10'>
-            <span className='font-bold text-center'><SunnyMorning  text={`Popular Classes`}/></span>
+            <div className='mb-10 text-center'>
+            <span className='font-bold text-3xl md:text-5xl'>Popular Classes</span>
             </div> 
              <div className='grid md:grid-cols-3 gap-7 md:mx-40'>
                 { 

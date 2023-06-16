@@ -91,7 +91,7 @@ const Register = () => {
     }
 
     return (
-        <section className="min-h-screen py-10">
+        <section className="min-h-screen py-10 md:py-24">
             <div className="min-h-screen items-center">
                 <div className="hero-content w-full"> 
                     <form className="card flex-shrink-0 shadow-2xl bg-base-100 md:w-2/4" onSubmit={handleSubmit(onSubmit)}>

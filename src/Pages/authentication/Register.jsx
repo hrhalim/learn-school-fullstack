@@ -27,7 +27,7 @@ const Register = () => {
                 updateUserProfile(name, photoURL)
                     .then(result => {
                         const savedUser = { name: loggedUser.displayName, email: loggedUser.email, role: 'student' , image: loggedUser.photoURL}
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://learn-school-server.vercel.app/users', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -66,7 +66,7 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user;
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email, role: 'student' }
-                fetch('http://localhost:5000/users', {
+                fetch('https://learn-school-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -74,8 +74,7 @@ const Register = () => {
                     body: JSON.stringify(savedUser)
                 })
                     .then(res => res.json())
-                    .then(data => {
-                        console.log(loggedUser);
+                    .then(data => { 
                         Swal.fire({
                             icon: 'success',
                             title: 'Register Successfull',

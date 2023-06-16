@@ -4,11 +4,9 @@ import React, { useEffect, useState } from 'react';
 const Banner3 = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
-        axios('http://localhost:5000/teachers/banner3')
-            .then(res => setData(res.data))
-            console.log(data);
-    }, [])
-    // console.log(data);
+        axios('https://learn-school-server.vercel.app/teachers/banner3')
+            .then(res => setData(res.data)) 
+    }, []) 
     return (
         <section className='py-7 md:py-20 bg-slate-50'>
             <div className='mb-11'>

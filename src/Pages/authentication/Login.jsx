@@ -42,7 +42,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email, role: 'student', image: loggedUser.photoURL }
-                fetch('http://localhost:5000/users', {
+                fetch('https://learn-school-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -96,10 +96,7 @@ const Login = () => {
                                         }
                                     })} />
                                 <button type="button" onClick={() => setView(!view)} ><FaEye className="absolute right-5 bottom-12" /></button>
-                                {errors.password && <p className="text-red-500">{errors.password.message}</p>}
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
+                                {errors.password && <p className="text-red-500">{errors.password.message}</p>} 
                             </div> 
                             <div className="form-control mt-6">
                                 <input className="btn btn-success" value='Login' type="submit" />

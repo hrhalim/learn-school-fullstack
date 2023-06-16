@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const Instructors = () => {
     const [teachers, setTeachers] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/teachers')
+        fetch('https://learn-school-server.vercel.app/teachers')
             .then(res => res.json())
-            .then(data => setTeachers(data))
+            .then(data => setTeachers(data)) 
     }, []) 
 
     return (

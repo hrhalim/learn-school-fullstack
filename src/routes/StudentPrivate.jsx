@@ -3,8 +3,7 @@ import useStudent from './../hooks/useStudent';
 import { Navigate } from 'react-router-dom';
 
 const StudentPrivate = ({children}) => {
-    const [isStudent] = useStudent();
-    // console.log('from is student ', isStudent);
+    const [isStudent] = useStudent(); 
 
     if(!isStudent){
         return <Navigate to='/'></Navigate>

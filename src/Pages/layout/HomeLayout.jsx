@@ -4,8 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../shared/Footer';
 
 const HomeLayout = () => {
-    const [toggle, setToggle] = useState(true);
-    console.log(toggle);
+    const [toggle, setToggle] = useState(true); 
     return (
         <main>
             <Navbar toggle={toggle} setToggle={setToggle} />

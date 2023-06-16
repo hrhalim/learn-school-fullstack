@@ -12,8 +12,7 @@ const Classes = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const [isAdmin] = useAdmin();
-    const [isInstructor] = useInstructor();
-    // console.log(isAdmin, isInstructor); 
+    const [isInstructor] = useInstructor(); 
 
 
     const addToCart = (lecture) => {
@@ -22,8 +21,7 @@ const Classes = () => {
                 title: 'You have to Login first',
                 showCancelButton: true,
                 confirmButtonText: 'Login',
-            }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
+            }).then((result) => { 
                 if (result.isConfirmed) {
                     navigate('/login');
                     return;
@@ -33,7 +31,7 @@ const Classes = () => {
 
 
         const lectureData = { lecture, email: user.email }
-        axios.post('http://localhost:5000/classes-cart', lectureData)
+        axios.post('https://learn-school-server.vercel.app/classes-cart', lectureData)
             .then(res => {
                 if (res.data.acknowledged) {
                     Swal.fire(
@@ -47,11 +45,11 @@ const Classes = () => {
     }
 
     return (
-       <section className="py-7 md:py-20">
+       <section className="py-7 md:pb-20 md:pt-40">
         <div className="grid lg:grid-cols-3 md:mx-40 gap-5 m-auto">
             {
                 data?.map(lecture =>
-                    <div key={lecture._id} className={`${lecture.availableSeats == 0 ? 'bg-red-600' : ''} border rounded-xl border-slate-300 w-[300px] p-4`}>
+                    <div key={lecture._id} className={`${lecture.availableSeats == 0 ? 'bg-red-600' : ''} border rounded-xl bg-white border-slate-300 w-[300px] p-4`}>
                         <img src={lecture.image} className="rounded-t-xl w-auto mb-4 h-52" />
                         <div className={`space-y-2`}>
                             <h3 className="text-2xl font-bold">{lecture.name}</h3>

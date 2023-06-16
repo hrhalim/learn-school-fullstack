@@ -17,10 +17,8 @@ const Banner4 = () => {
         fetch('reviews.json')
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [])
-
-
-
+    }, []) 
+ 
     return (
         <section className="py-7 md:py-20 border border-t-2">
             <span className="font-bold mb-20 text-center

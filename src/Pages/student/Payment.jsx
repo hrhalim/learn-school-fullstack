@@ -13,7 +13,7 @@ const Payment = () => {
     const [price, setPrice] = useState(null);
     const [lectureId, setLectureId] = useState(null);
     const [lectureId2, setLectureId2] = useState(null);
-    axiosSecure(`http://localhost:5000/classes-cart/${id}`)
+    axiosSecure(`https://learn-school-server.vercel.app/classes-cart/${id}`)
     .then(res => {
         setPrice(res.data?.lecture?.price);
         setLectureId2(res.data?.lecture);

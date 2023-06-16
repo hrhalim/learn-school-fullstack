@@ -1,6 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import ReactDOM from 'react-dom/client' 
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AuthProvider from './Providers/AuthProvider.jsx'
@@ -58,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: '/classes',
         element: <Classes />,
-        loader: () => axios('http://localhost:5000/classes')
+        loader: () => axios('https://learn-school-server.vercel.app/classes')
       },
     ]
   },

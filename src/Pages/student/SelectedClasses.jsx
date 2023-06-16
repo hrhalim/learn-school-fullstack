@@ -19,7 +19,7 @@ const SelectedClasses = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/classes-cart/${id}`)
+                axios.delete(`https://learn-school-server.vercel.app/classes-cart/${id}`)
                     .then(res => {
                         if (res.data.deletedCount) {
                             refetch();

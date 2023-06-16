@@ -9,8 +9,7 @@ const PaymentHistory = () => {
     useEffect(() => {
         axiosSecure(`/payment-details/${user.email}`)
             .then(res => setData(res.data));
-    }, []);
-    // console.log(data);
+    }, []); 
     return (
         <section className="py-10 md:py-20">
             <div className="overflow-x-auto mx-40 min-h-screen">

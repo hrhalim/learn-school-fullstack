@@ -7,7 +7,7 @@ const Footer = () => {
         
         <footer className="footer p-10 bg bg-black opacity-90 text-white grid md:grid-cols-4 gap-7">
                 <div>
-                <span className='font-bold text-3xl md:text-5xl text-white'>LearnSchool</span>
+                <span className='font-bold text-3xl md:text-5xl text-white'>Learn<span className='text-success'>Jon</span></span>
                     <p className="pr-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, maiores. Aut veritatis repellendus, nostrum deserunt corporis neque vero consequatur</p>
                 </div> 
                 <div> 
@@ -16,12 +16,11 @@ const Footer = () => {
                 <a className='link link-hover'><Link to='/classes'>Classes</Link></a>
                 <a className='link link-hover'><Link to='/dashboard'>Dashboard</Link></a>
                 </div> 
-                <div>
+                <div> 
                     <span className="footer-title">Company</span> 
                     <a className="link link-hover">About us</a> 
                     <a className="link link-hover">Contact</a> 
                     <a className="link link-hover">Jobs</a> 
-                    <a className="link link-hover">Press kit</a>
                 </div> 
                 <div>
                     <span className="footer-title">Legal</span> 
@@ -32,7 +31,7 @@ const Footer = () => {
                 </footer>
                 <footer className="footer items-center p-4 text-black bg-slate-300">
                     <div className="items-center grid-flow-col"> 
-                        <p>Copyright © 2023 - Designed By LearnSchool</p>
+                        <p>Copyright © 2023 - Designed By LearnJon</p>
                     </div> 
                     <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
                         <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path></svg></a>

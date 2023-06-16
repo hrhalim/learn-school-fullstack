@@ -1,12 +1,10 @@
 import axios from 'axios'; 
 import { useEffect, useState } from 'react';
-
-
-
+ 
 const Banner2 = () => {
     const [data, setData] = useState([]); 
     useEffect(() => {
-        axios.get('http://localhost:5000/classes/banner2')
+        axios.get('https://learn-school-server.vercel.app/classes/banner2')
         .then(res => setData(res.data)) 
     }, [])
     return (

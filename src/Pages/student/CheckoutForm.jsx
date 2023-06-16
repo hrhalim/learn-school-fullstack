@@ -5,10 +5,6 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-
 const CheckoutForm = ({ price, lectureId, lecture }) => {
     const stripe = useStripe();
     const elements = useElements();
@@ -18,19 +14,16 @@ const CheckoutForm = ({ price, lectureId, lecture }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const { user } = useContext(AuthContext);
-    const navigate = useNavigate();
-    // console.log(lecture);
+    const navigate = useNavigate(); 
 
     useEffect(() => {
         if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price: parseInt(price) })
-                .then(res => {
-                    // console.log(res.data.clientSecret)
+                .then(res => { 
                     setClientSecret(res.data.clientSecret);
                 })
         }
-    }, [price, axiosSecure])
-    // console.log(clientSecret);
+    }, [price, axiosSecure]) 
 
 
     const handleSubmit = async (event) => {
@@ -80,8 +73,7 @@ const CheckoutForm = ({ price, lectureId, lecture }) => {
         if (confirmError) {
             console.log(confirmError);
         }
-
-        console.log('payment intent', paymentIntent)
+ 
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id); 
@@ -95,8 +87,7 @@ const CheckoutForm = ({ price, lectureId, lecture }) => {
                 status: 'service pending',
             }
             axiosSecure.post('/payments', payment)
-                .then(res => {
-                    console.log(res.data);
+                .then(res => { 
                     if (res.data) {
                         // display confirm
 

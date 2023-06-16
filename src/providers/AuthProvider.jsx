@@ -40,13 +40,11 @@ const AuthProvider = ({children}) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
-            // console.log( 'from auth provider' , currentUser);
+            setUser(currentUser); 
 
             if(currentUser){
-                axios.post('http://localhost:5000/jwt', {email: currentUser.email})
-                .then(data => {
-                    // console.log(data.data.token);
+                axios.post('https://learn-school-server.vercel.app/jwt', {email: currentUser.email})
+                .then(data => { 
                     localStorage.setItem('access-token', data.data.token);
                     setLoading(false);
                 })

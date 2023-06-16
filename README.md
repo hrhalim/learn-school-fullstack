@@ -1,6 +1,8 @@
-##LearnSchool 
+## Wellcome to Our website
 
-* LearnSchool is the best platform for all of your need's for Learning curricullum
+## LearnJon 
+
+* LearnJon is the best platform for all of your need's for Learning curricullum
 * We can student purchase their favourite Instructors and courses
 * We offer a wide range of music courses covering various instruments such as guitar, drums, piano, violin, flute and more. Whatever instrument you're interested in learning, we have you covered.
 * Our courses follow structured lesson plans that take you from the basics to more advanced concepts. 
@@ -10,15 +12,7 @@
 * You can measure your development through regular assessments, quizzes, and checkpoints, allowing you to monitor your improvement and identify areas for further focus.
 * Most important the whole website will be always monitored by the admin , without admin approval none of the users can do any action , so it's our first priority for user's security
 
-##We are uses technology
-* React Js
-* Node Js
-* Express JS
-* MongoDB
-* Tailwind CSS
-* DaisyUi
-
-##We are uses packages 
+## We are uses packages 
 
 * react-router-dom
 * sweetalert2
@@ -41,4 +35,4 @@
 * react-rating  
 * swiper
 
-##Live Site URL: 
+## Live Site URL: https://learnschool-854d5.web.app/

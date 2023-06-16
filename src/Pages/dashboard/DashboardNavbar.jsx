@@ -7,11 +7,7 @@ import { FaHome, FaCheck, FaHardHat, FaPaypal, FaUser } from "react-icons/fa";
 const DashboardNavbar = () => {
     const [isStudent] = useStudent();
     const [isInstructor] = useInstructor();
-    const [isAdmin] = useAdmin();
-    // console.log(isAdmin, 'admin');
-
-    // console.log(isStudent , 'student');
-    // console.log(isInstructor , 'instructor');
+    const [isAdmin] = useAdmin(); 
 
     const navItems = <>
         <li className='hover:text-info'><NavLink to='/'><FaHome></FaHome> Home</NavLink></li>
@@ -51,7 +47,7 @@ const DashboardNavbar = () => {
                     </ul>
                 </div>
                 <a className=" normal-case text-xl">
-                <span className='font-bold text-3xl md:text-5xl text-white'>LearnSchool</span>
+                <span className='font-bold text-3xl md:text-5xl text-white'>Learn<span className='text-success'>Jon</span></span>
                 </a>
             </div>
             <div className="navbar-end hidden lg:flex items-center">

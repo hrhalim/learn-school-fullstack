@@ -14,17 +14,17 @@ const ManageClasses = () => {
     }, [])
 
     const openModal = (item, status) => {
-        setSelectedItem(item); // Set the selected item when the modal is opened
+        setSelectedItem(item);  
         console.log(status);
         setStaus(status);
-        window.my_modal_1.showModal(); // Show the modal
+        window.my_modal_1.showModal();  
     };
 
     const handleStatusChange = (e) => {
         e.preventDefault();
         const feedback = e.target.feedback.value;
 
-        axios.patch(`http://localhost:5000/all-classes-data?id=${selectedItem._id}&feedback=${feedback}&status=${status}`)
+        axios.patch(`https://learn-school-server.vercel.app/all-classes-data?id=${selectedItem._id}&feedback=${feedback}&status=${status}`)
             .then(res => {
                 console.log(res.data);
                 if (res.data.acknowledged) {

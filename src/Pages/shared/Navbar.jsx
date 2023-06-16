@@ -59,7 +59,7 @@ const Navbar = ({ toggle, setToggle }) => {
                         {navItems}
                     </ul>
                     <a className=" normal-case text-xl">
-                        <span className='font-bold text-3xl md:text-5xl text-white'>LearnSchool</span>
+                        <span className='font-bold text-3xl md:text-5xl text-white'>Learn<span className='text-success'>Jon</span></span>
                     </a>
 
                 </div>

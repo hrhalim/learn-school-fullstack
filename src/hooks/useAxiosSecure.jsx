@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://learn-school-server.vercel.app'
 })
 
 const useAxiosSecure = () => {

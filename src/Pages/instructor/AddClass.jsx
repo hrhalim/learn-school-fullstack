@@ -10,8 +10,7 @@ const AddClass = () => {
     const {user} = useContext(AuthContext);
     const [disabled, setDisabled] = useState(false);
 
-    const onSubmit = (data) => {
-        // Logic for creating a class
+    const onSubmit = (data) => { 
         setDisabled(true);
         const { name, image, instructor, availableSeats, price, email } = data;
         const lectureData = {
@@ -24,9 +23,8 @@ const AddClass = () => {
             status: 'pending',
             enrolled: 0
         };
-        axios.post('http://localhost:5000/classes', lectureData)
-        .then(res => {
-            console.log(res);
+        axios.post('https://learn-school-server.vercel.app/classes', lectureData)
+        .then(res => { 
             if(res.data.acknowledged){
                 Swal.fire({
                     icon: 'success',

@@ -8,7 +8,7 @@ const Banner3 = () => {
             .then(res => setData(res.data)) 
     }, []) 
     return (
-        <section className='py-7 md:py-20 bg-slate-50'>
+        <section className='py-7 md:py-20'>
             <div className='mb-11'>
                 <h3 className='text-3xl md:text-5xl font-bold text-center'>Popular Instructors</h3>
             </div>
